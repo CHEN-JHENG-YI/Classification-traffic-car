@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Classification traffic signs</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Eric's project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#tag1">資料下載</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#tag2">資料預處理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#tag3">模型建立</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#tag4">結果</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Classification traffic signs</h1>
+      <p class="lead">利用機器學習演算法辨識交通號誌圖形</p>
+      <h2>想法</h2>
+      <p class="lead">因為好奇自走車的演算法是如何運作的，就利用在學校所學的機器學習演算法來試著分析交通號誌的圖形。運用CNN演算法來抓取圖片的特徵，並用監督學習方式來訓練模型，最後辨識率達到96%。</p>
+    </div>
+  </header>
+
+  <section id="tag1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+              <b>1. 資料下載</b>
+              <p>網路上有很多訓練資料可以下載，我選用德國的交通號誌Data來訓練模型，以下為模型的 features 和 labels，還有數量分佈</p>
+              <hr>
+              <img src="images/data.png" alt="" >
+              <hr>
+              <img src="images/distribution of traning data.png" alt="">
+              <hr>
+
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tag2" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+          <b>2. 資料預處理</b>
+          <p>首先將所有訓練圖形做直方圖均衡化 [ cv2.equalizeHist(img) ] 將要均衡化的原影象【要求是灰度影象】作為引數傳入，則返回值即為均衡化後的影象。可以使圖片產生更高的對比度，有助於神經網路特徵提取。 </p>
+          <hr>
+          <img src="images/data_pre.png" alt="" >
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tag3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+          <b>3. 模型建立</b>
+          <p>建立CNN(Convolution Neural Network)模型，並加入droupout避免overfitting</p>
+          <hr>
+          <img src="images/cnn.png" alt="" width="700px" >
+          <hr>
+          <img src="images/Model2-summary.PNG" alt="" width="700px">
+          <hr>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tag4" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+          <b>4. 結果</b>
+          <p></p>
+          <hr>
+          <img src="images/Model2-loss.PNG" alt="" >
+          <hr>
+          <img src="images/Model2-acc.PNG" alt="" >
+          <hr>
+          <iframe width="720" height="500"
+          src="https://www.youtube.com/watch?v=3OV2gsARmn0">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Written by Eric</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
